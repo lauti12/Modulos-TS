@@ -9,11 +9,19 @@ export function productsListComponent() {
 
   const list = document.createElement("ul");
 
-  productsList.forEach((product) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = `${product.title} - $${product.price}`;
-    list.appendChild(listItem);
-  });
+  function getProductSortedByPrice(){
+    const listaOrdenada = productsList.sort((a, b) =>{
+      return a.price - b.price;
+    })
+   return listaOrdenada;
+ }
+ const sortedProducts = getProductSortedByPrice();
+
+ sortedProducts.forEach((product) => {
+   const listItem = document.createElement('li'); 
+   listItem.textContent = `${product.title} - $${product.price}`; 
+   list.appendChild(listItem); 
+});
 
   section.appendChild(list);
 
