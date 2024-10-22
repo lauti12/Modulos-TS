@@ -6,12 +6,15 @@
   "scripts": {
     "build": "tsc",
     "dev": "http-server & tsc -w",
-    "start": "http-server"
+    "start": "http-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "Marce Zapaia <marce@apx.school> (https://apx.school)",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "http-server": "^14.1.1",
     "typescript": "^5.3.3"
   }
